@@ -10,7 +10,7 @@ import circleci.DemoApplication;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = DemoApplication.class)
-public class TestDemoApplication {
+public class IT_DemoApplicationTest {
 	
 	@Test
 	public void contextLoaded() {

@@ -1,6 +1,10 @@
 machine:
   java:
     version: openjdk8
+  environment:
+    spring.profiles.active: circleci
+    JDBC_URL: jdbc:postgresql://localhost:5432/circle_test
+    JDBC_USER: ubuntu  
 
 test:
   post:

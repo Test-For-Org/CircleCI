@@ -1,16 +1,17 @@
 package circleci;
 
-import org.junit.Test;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
-import org.junit.runner.RunWith;
-import static org.hamcrest.CoreMatchers.*;
 
+import java.sql.Timestamp;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import circleci.DemoApplication;
-import circleci.controller.CircleController;
 
 
 @RunWith(SpringRunner.class)
@@ -18,10 +19,15 @@ import circleci.controller.CircleController;
 public class DemoApplicationTest {
 	
 	@Autowired
-	CircleController controller;
+	JdbcTemplate jdbcTemplate;
 	
 	@Test
 	public void contextLoaded() {
-		assertThat(controller, is(notNullValue()));
+		assertThat(jdbcTemplate, is(notNullValue()));
+	}
+	
+	@Test
+	public void dbConTest() {
+		jdbcTemplate.queryForObject("select now()", Timestamp.class);
 	}
 }

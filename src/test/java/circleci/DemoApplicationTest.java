@@ -3,7 +3,7 @@ package circleci;
 import org.junit.Test;
 import static org.junit.Assert.assertThat;
 import org.junit.runner.RunWith;
-import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,6 +22,6 @@ public class DemoApplicationTest {
 	
 	@Test
 	public void contextLoaded() {
-		assertThat(controller, nullValue());
+		assertThat(controller, is(notNullValue()));
 	}
 }

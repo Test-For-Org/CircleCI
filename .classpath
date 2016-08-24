@@ -58,4 +58,5 @@
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-jdbc/4.3.2.RELEASE/spring-jdbc-4.3.2.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-tx/4.3.2.RELEASE/spring-tx-4.3.2.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/postgresql/postgresql/9.3-1100-jdbc41/postgresql-9.3-1100-jdbc41.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/flywaydb/flyway-core/4.0.3/flyway-core-4.0.3.jar"/>
 </classpath>

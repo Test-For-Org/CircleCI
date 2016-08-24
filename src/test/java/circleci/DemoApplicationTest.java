@@ -2,9 +2,12 @@ package circleci;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.CoreMatchers.equalTo;
+
 import static org.junit.Assert.assertThat;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,6 +31,13 @@ public class DemoApplicationTest {
 	
 	@Test
 	public void dbConTest() {
-		jdbcTemplate.queryForObject("select now()", Timestamp.class);
+		Date dt = jdbcTemplate.queryForObject("select now()", Timestamp.class);
+		assertThat(dt, is(notNullValue()));
+	}
+	
+	@Test
+	public void fetchTest() {
+		String name = jdbcTemplate.queryForObject("select name from mytest_flyway", String.class);
+		assertThat(name, is(equalTo("Samir")));
 	}
 }

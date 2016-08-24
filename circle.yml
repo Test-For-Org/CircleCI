@@ -7,7 +7,7 @@ machine:
 
 test:
   override:
-    - mvn -Dspring.profiles.active=circleci interation-test
+    - mvn -Dspring.profiles.active=circleci integration-test
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;    
